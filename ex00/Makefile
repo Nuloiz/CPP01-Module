@@ -5,7 +5,7 @@ CC := c++
 #CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
 CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
 
-SRC := Zombie.cpp newZombie.cpp randomChump.cpp
+SRC := main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 
 INCLUDES := -I Zombie.hpp
