@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
 int main(void){
-	randomChump("Helmut");
+	Zombie();
 	return (1);
 }
