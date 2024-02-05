@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie(){
-	zombieHorde(10, "Helmut");
+	zombieHorde(1, "Helmut");
 }
 
 Zombie::~Zombie(){
