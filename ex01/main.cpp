@@ -1,6 +1,9 @@
 #include "Zombie.hpp"
 
 int main(void){
-	Zombie();
+	Zombie *horde;
+
+	horde = zombieHorde(5, "Helmut");
+	delete [] horde;
 	return (1);
 }
