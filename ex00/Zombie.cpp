@@ -1,12 +1,11 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(){
-	newZombie("Helmut")->announce();
-	randomChump("Herkules");
+Zombie::Zombie(std::string name) : name(name){
+	announce();
 }
 
 Zombie::~Zombie(){
-	std::cout << name << "Destroyed\n";
+	std::cout << name << " Destroyed\n";
 }
 
 void Zombie::announce(void){
