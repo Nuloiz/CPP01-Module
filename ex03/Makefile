@@ -5,8 +5,7 @@ CC := c++
 #CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98
 CPPFLAGS := -Wall -Wextra -Werror -g3 -std=c++98 -fsanitize=address
 
-SRC := main.cpp Zombie.cpp zombieHorde.cpp
-
+SRC := main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 INCLUDES := -I Weapon.hpp HumanA.hpp HumanB.hpp
 
