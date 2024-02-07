@@ -9,7 +9,10 @@ HumanB::~HumanB() {
 }
 
 void HumanB::attack() {
-	std::cout << get_name() << " attacks with their " << weapon->get_type() << "\n";
+    //if (!weapon->get_type())
+        //std::cout << get_name() << " has no Weapon and dies\n";
+    //else
+	    std::cout << get_name() << " attacks with their " << weapon->get_type() << "\n";
 }
 
 void HumanB::setWeapon(Weapon &w) {
