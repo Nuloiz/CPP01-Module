@@ -1,6 +1,6 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : weapon(" "){
+HumanB::HumanB(std::string name){
 	set_name(name);
 }
 
@@ -9,18 +9,18 @@ HumanB::~HumanB() {
 }
 
 void HumanB::attack() {
-	std::cout << get_name() << " attacks with their " << weapon.get_type() << "\n";
+	std::cout << get_name() << " attacks with their " << weapon->get_type() << "\n";
 }
 
-void HumanB::setWeapon(Weapon w) {
-	weapon = w;
+void HumanB::setWeapon(Weapon &w) {
+	weapon = &w;
 }
 void HumanB::set_name(std::string n) {
 	name = n;
 }
 
 Weapon HumanB::get_weapon() const{
-	return (weapon);
+	return (*weapon);
 }
 
 std::string HumanB::get_name() const {

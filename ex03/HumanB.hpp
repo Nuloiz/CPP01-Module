@@ -13,7 +13,7 @@ public:
 	Weapon		get_weapon() const;
 
 	void 		set_name(std::string n);
-	void		setWeapon(Weapon w);
+	void		setWeapon(Weapon &w);
 
 	void 		attack();
 
@@ -21,5 +21,5 @@ public:
 
 private:
 	std::string name;
-	Weapon	weapon;
+	Weapon	*weapon;
 };
