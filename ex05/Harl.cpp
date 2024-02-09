@@ -20,3 +20,16 @@ void Harl::warning() {
 void Harl::error() {
     std::cout << "[Error] I’m sorry, I’m going to have to ask you to leave. We’ve had complaints about your behaviour.\n";
 }
+
+void complain(std::string level) {
+    if (level == "debug")
+        debug();
+    else if (level == "info")
+        info();
+    else if (level == "warning")
+        warning();
+    else if (level == "error")
+        error();
+    else
+        std::cout << "Invalid level\n";
+}
