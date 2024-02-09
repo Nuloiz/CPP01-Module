@@ -1,9 +1,10 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 
 void replace(std::string filename, std::string s1, std::string s2){
-    std::ifstream   inf(filename);
-    std::ofstream   outf(filename + ".replace");
+    std::ifstream   inf(filename.c_str());
+    std::ofstream   outf(filename.append(".replace").c_str());
     std::string     string;
     int ls1;
     int pos = -1;
@@ -16,14 +17,18 @@ void replace(std::string filename, std::string s1, std::string s2){
     ls1 = s1.length();
     while (string[(++pos + ls1)]){
         if (string.compare(pos, ls1, s2)){
-            outf << string.substr(&(string[pos]), i) << s2;
+            outf << string.substr(pos, i);
+            std::cout << string.substr(pos, i);
+            std::cout << pos << i << ls1;
+            outf << s2;
             i = 0;
             pos += ls1;
         }
         else
             i++;
     }
-    return ;
+    inf.close();
+    outf.close();
 }
 
 int main(int argc, char **argv){
