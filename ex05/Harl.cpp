@@ -21,16 +21,17 @@ void Harl::error() {
     std::cout << "[Error] I’m sorry, I’m going to have to ask you to leave. We’ve had complaints about your behaviour.\n";
 }
 
-void complain(std::string level) {
-    static void (Harl::*log[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    if (level == "debug")
-        debug();
-    else if (level == "info")
-        info();
-    else if (level == "warning")
-        warning();
-    else if (level == "error")
-        error();
-    else
-        std::cout << "Invalid level\n";
+void Harl::complain(std::string level) {
+    void (Harl::*log[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int i = 0;
+    std::string info[] = {"debug", "info", "warning", "error"};
+    Harl test;
+
+    while (i < 4) {
+        if (info[i] == level) {
+            (test.*log[i])();
+            return ;
+        }
+        i++;
+    }
 }
