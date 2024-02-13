@@ -9,7 +9,8 @@ HumanB::~HumanB() {
 }
 
 void HumanB::attack() {
-    std::cout << get_name() << " attacks with their " << weapon->get_type() << "\n";
+    if (weapon != NULL)
+        std::cout << get_name() << " attacks with their " << weapon->get_type() << "\n";
 }
 
 void HumanB::setWeapon(Weapon &w) {
