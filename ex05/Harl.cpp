@@ -22,6 +22,7 @@ void Harl::error() {
 }
 
 void complain(std::string level) {
+    static void (Harl::*log[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     if (level == "debug")
         debug();
     else if (level == "info")
